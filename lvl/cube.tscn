@@ -1,57 +1,8 @@
 [gd_scene format=4 uid="uid://d2if1tstdw75"]
 
 [ext_resource type="PackedScene" uid="uid://way0id1nksas" path="res://lvl/player-mesh/cube.glb" id="1_0u1kq"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kmf8j"]
-resource_name = "Cyan"
-cull_mode = 2
-albedo_color = Color(0, 0.9063355, 0.86871797, 1)
-roughness = 0.5
-emission_enabled = true
-emission = Color(0, 0.90588236, 0.87058824, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vg7u3"]
-resource_name = "Red"
-cull_mode = 2
-albedo_color = Color(0.9063355, 0.0008662389, 0.042843953, 1)
-roughness = 0.5
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fxcgg"]
-resource_name = "Purple"
-cull_mode = 2
-albedo_color = Color(0.62246925, 0, 0.9063355, 1)
-roughness = 0.5
-emission_enabled = true
-emission = Color(0.62352943, 0, 0.90588236, 1)
-emission_energy_multiplier = 3.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vnorm"]
-resource_name = "BlackBorder"
-cull_mode = 2
-albedo_color = Color(0.2583311, 0.2583311, 0.2583311, 1)
-roughness = 0.5
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8d6cq"]
-resource_name = "Orange"
-cull_mode = 2
-albedo_color = Color(0.8873986, 0.5133887, 0, 1)
-metallic_specular = 0.0
-roughness = 0.42
-emission_enabled = true
-emission = Color(0.9019608, 0.5019608, 0, 1)
-emission_energy_multiplier = 2.64
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_apv7r"]
-resource_name = "green"
-cull_mode = 2
-albedo_color = Color(0.04128044, 0.9063355, 0, 1)
-roughness = 0.5
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_75hne"]
-resource_name = "yellow"
-cull_mode = 2
-albedo_color = Color(0.7153473, 0.71384436, 1.540184e-06, 1)
-roughness = 0.5
+[ext_resource type="Material" uid="uid://dm1dibda26kd4" path="res://lvl/player-mesh/black_Player.tres" id="2_kmf8j"]
+[ext_resource type="Material" uid="uid://b8iedsjpg8256" path="res://lvl/player-mesh/Cyan_Player.tres" id="3_fxcgg"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6jly4"]
 _surfaces = [{
@@ -127,7 +78,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_pm8x5"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_fxcgg"]
 resource_name = "cube_Cube"
 _surfaces = [{
 "aabb": AABB(-0.9764865, 0, -0.9764865, 1.952973, 0.100000024, 1.952973),
@@ -135,7 +86,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 72,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
-"material": SubResource("StandardMaterial3D_kmf8j"),
+"material": ExtResource("3_fxcgg"),
 "name": "Cyan",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -147,7 +98,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 72,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
-"material": SubResource("StandardMaterial3D_vg7u3"),
+"material": ExtResource("3_fxcgg"),
 "name": "Red",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -159,7 +110,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 72,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
-"material": SubResource("StandardMaterial3D_fxcgg"),
+"material": ExtResource("3_fxcgg"),
 "name": "Purple",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -171,7 +122,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 276,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADwAQABEADwASABAAEwAUABUAEwAWABQAFwAYABkAFwAaABgAGwAcAB0AHgAfACAAHgAhAB8AIgAjACQAIgAlACMAJgAnACgAJgApACcAKgArACwALQAuAC8ALQAwAC4AMQAyADMAMQA0ADIANQA2ADcANQA4ADYAOQA6ADsAPAA9AD4APAA/AD0AQABBAEIAQABDAEEARABFAEYARABHAEUASABJAEoASwBMAE0ASwBOAEwATwBQAFEATwBSAFAAUwBUAFUAUwBWAFQAVwBYAFkAWgBbAFwAWgBdAFsAXgBfAGAAXgBhAF8AYgBjAGQAYgBlAGMAZgBnAGgAaQBqAGsAaQBsAGoAbQBuAG8AbQBwAG4AcQByAHMAcQB0AHIAdQB2AHcAeAB5AHoAeAB7AHkAfAB9AH4AfAB/AH0AgACBAIIAgACDAIEAhACFAIYAhACHAIUAiACJAIoAiACLAIkAjACNAI4AjACPAI0AkACRAJIAkACTAJEAlACVAJYAlACXAJUAmACZAJoAmACbAJkAnACdAJ4AnACfAJ0AoAChAKIAoACjAKEApAClAKYApACnAKUAqACpAKoAqACrAKkArACtAK4ArACvAK0AsACxALIAsACzALEAtAC1ALYAtAC3ALUAuAC5ALoAuAC7ALkAvAC9AL4AvAC/AL0A"),
-"material": SubResource("StandardMaterial3D_vnorm"),
+"material": ExtResource("2_kmf8j"),
 "name": "BlackBorder",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -183,7 +134,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 72,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
-"material": SubResource("StandardMaterial3D_8d6cq"),
+"material": ExtResource("3_fxcgg"),
 "name": "Orange",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -195,7 +146,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 72,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
-"material": SubResource("StandardMaterial3D_apv7r"),
+"material": ExtResource("3_fxcgg"),
 "name": "green",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -207,7 +158,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 72,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
-"material": SubResource("StandardMaterial3D_75hne"),
+"material": ExtResource("3_fxcgg"),
 "name": "yellow",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -217,7 +168,50 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6jly4")
 
+[sub_resource type="Animation" id="Animation_fxcgg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8d6cq"]
+resource_name = "idle"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.1699416, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_75hne"]
+_data = {
+&"RESET": SubResource("Animation_fxcgg"),
+&"idle": SubResource("Animation_8d6cq")
+}
+
 [node name="cube" unique_id=1381748780 instance=ExtResource("1_0u1kq")]
 
 [node name="Cube" parent="." index="0" unique_id=414150883]
-mesh = SubResource("ArrayMesh_pm8x5")
+mesh = SubResource("ArrayMesh_fxcgg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=667565968]
+root_node = NodePath("../Cube")
+libraries/ = SubResource("AnimationLibrary_75hne")
+autoplay = &"idle"

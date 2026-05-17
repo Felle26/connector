@@ -5,3 +5,4 @@
 [node name="Node3D" type="Node3D" unique_id=2138845122]
 
 [node name="cube" parent="." unique_id=80409464 instance=ExtResource("1_2720c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010558605, 0, 0.004568577)

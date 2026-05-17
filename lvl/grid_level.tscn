@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://borriafdw3cxf" path="res://lvl/start_Tile.tscn" id="2_knugq"]
 [ext_resource type="Script" uid="uid://c3i74icdchbyd" path="res://scripts/grid_cube.gd" id="2_ubrk7"]
 [ext_resource type="PackedScene" uid="uid://byie8t2xw7g8k" path="res://lvl/end_tile.tscn" id="3_eqg7f"]
-[ext_resource type="PackedScene" uid="uid://b1e6tknnel53o" path="res://lvl/PlayerChar.tscn" id="3_f8gq1"]
+[ext_resource type="PackedScene" uid="uid://d2if1tstdw75" path="res://lvl/cube.tscn" id="5_eqg7f"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f8gq1"]
 sky_top_color = Color(0.007843138, 0.007843138, 0.07058824, 1)
@@ -44,8 +44,8 @@ fill_chance = 0.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 script = ExtResource("2_ubrk7")
 
-[node name="cubeMesh" parent="Cube" unique_id=231022415 instance=ExtResource("3_f8gq1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+[node name="cube" parent="Cube" unique_id=1381748780 instance=ExtResource("5_eqg7f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Cube" unique_id=315650200]
 transform = Transform3D(0.81915224, -0.19617444, 0.5389854, 0, 0.93969274, 0.34201986, -0.57357615, -0.28016633, 0.7697514, 6.328639, 4.5740676, 7.0862207)
