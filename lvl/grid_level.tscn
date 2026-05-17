@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dqo2k1b4208ga"]
+
+[ext_resource type="Script" uid="uid://bm7cplcubhdsj" path="res://scripts/grid_level.gd" id="1_jw2u7"]
+[ext_resource type="Script" uid="uid://c3i74icdchbyd" path="res://scripts/grid_cube.gd" id="2_ubrk7"]
+[ext_resource type="PackedScene" uid="uid://b1e6tknnel53o" path="res://lvl/PlayerChar.tscn" id="3_f8gq1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f8gq1"]
+sky_top_color = Color(0.007843138, 0.007843138, 0.07058824, 1)
+sky_horizon_color = Color(0.015686275, 0.015686275, 0.101960786, 1)
+sky_curve = 0.33635864
+sky_energy_multiplier = 0.2
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.015686275, 0.015686275, 0.101960786, 1)
+ground_curve = 0.9370154
+
+[sub_resource type="Sky" id="Sky_knugq"]
+sky_material = SubResource("ProceduralSkyMaterial_f8gq1")
+
+[sub_resource type="Environment" id="Environment_f5j2n"]
+background_mode = 2
+background_color = Color(0.0352941, 0.054902, 0.0823529, 1)
+sky = SubResource("Sky_knugq")
+ambient_light_source = 2
+ambient_light_energy = 0.75
+glow_enabled = true
+glow_intensity = 1.5
+glow_bloom = 0.67
+fog_enabled = true
+fog_light_color = Color(0.07561808, 5.784414e-05, 0.12907144, 1)
+fog_light_energy = 0.44
+
+[node name="Game" type="Node3D" unique_id=1287902632]
+script = ExtResource("1_jw2u7")
+tile_size = 22.0
+
+[node name="Tiles" type="Node3D" parent="." unique_id=1564545814]
+
+[node name="Cube" type="Node3D" parent="." unique_id=468087241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+script = ExtResource("2_ubrk7")
+
+[node name="cubeMesh" parent="Cube" unique_id=231022415 instance=ExtResource("3_f8gq1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Cube" unique_id=315650200]
+transform = Transform3D(0.81915224, -0.19617441, 0.5389853, 0, 0.93969274, 0.34201986, -0.57357615, -0.28016633, 0.76975137, 9.2, 13, 15.5)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1738635495]
+transform = Transform3D(0.819152, -0.196175, 0.538986, 0, 0.939693, 0.34202, -0.573576, -0.280166, 0.769751, 0, 6, 0)
+light_energy = 2.2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1813274961]
+environment = SubResource("Environment_f5j2n")

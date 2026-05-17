@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://n61m47siri5g"]
+
+[ext_resource type="PackedScene" uid="uid://c135c1hhgcak6" path="res://lvl/BaseTile-mesh/BaseTile.glb" id="1_xq2hl"]
+
+[node name="Node3D" type="Node3D" unique_id=721555819]
+
+[node name="BaseTile" parent="." unique_id=1419607909 instance=ExtResource("1_xq2hl")]

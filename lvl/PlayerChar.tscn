@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b1e6tknnel53o"]
+
+[ext_resource type="PackedScene" uid="uid://way0id1nksas" path="res://lvl/player-mesh/cube.glb" id="1_2720c"]
+
+[node name="Node3D" type="Node3D" unique_id=2138845122]
+
+[node name="cube" parent="." unique_id=80409464 instance=ExtResource("1_2720c")]

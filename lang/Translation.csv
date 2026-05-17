@@ -1,0 +1,13 @@
+key;de;en
+MENU_PLAY;Spiel Starten;Start Game
+MENU_OPTIONS;Einstellungen;Settings
+MENU_QUIT;Beenden;Quit Game
+MENU_OPTIONS_TITLE;Einstellungen;Settings
+MENU_OPTIONS_VOLUME;Gesamt Lautstärke;Master Volume
+MENU_OPTIONS_EFFECT_VOLUME;Effekte;Effects
+MENU_OPTIONS_MUSIC_VOLUME;Musik;Music
+MENU_OPTIONS_RESOLUTION;Auflösung;Resolution
+MENU_OPTIONS_LANGUAGE;Sprache;Language
+MENU_OPTIONS_BACK;Zurück;Back
+MENU_OPTIONS_LANG_GERMAN;Deutsch;German
+MENU_OPTIONS_LANG_ENGLISH;Englisch;English
