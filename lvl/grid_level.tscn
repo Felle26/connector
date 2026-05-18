@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bm7cplcubhdsj" path="res://scripts/grid_level.gd" id="1_jw2u7"]
 [ext_resource type="PackedScene" uid="uid://borriafdw3cxf" path="res://lvl/start_Tile.tscn" id="2_knugq"]
-[ext_resource type="Script" uid="uid://c3i74icdchbyd" path="res://scripts/grid_cube.gd" id="2_ubrk7"]
 [ext_resource type="PackedScene" uid="uid://byie8t2xw7g8k" path="res://lvl/end_tile.tscn" id="3_eqg7f"]
-[ext_resource type="PackedScene" uid="uid://d2if1tstdw75" path="res://lvl/cube.tscn" id="5_eqg7f"]
+[ext_resource type="PackedScene" uid="uid://bgjq26hk4d3ub" path="res://lvl/Safe_Tile.tscn" id="4_eqg7f"]
+[ext_resource type="PackedScene" uid="uid://b1e6tknnel53o" path="res://lvl/PlayerChar.tscn" id="4_knugq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f8gq1"]
 sky_top_color = Color(0.007843138, 0.007843138, 0.07058824, 1)
@@ -35,21 +35,16 @@ fog_light_energy = 0.44
 script = ExtResource("1_jw2u7")
 start_tile_scene = ExtResource("2_knugq")
 end_tile_scene = ExtResource("3_eqg7f")
+Special_tile = ExtResource("4_eqg7f")
+grid_size_x = 5
+grid_size_z = 5
 tile_size = 22.0
-fill_chance = 0.5
+fill_chance = 0.2
 
 [node name="Tiles" type="Node3D" parent="." unique_id=1564545814]
 
-[node name="Cube" type="Node3D" parent="." unique_id=468087241]
+[node name="Cube" parent="." unique_id=1363088143 instance=ExtResource("4_knugq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
-script = ExtResource("2_ubrk7")
-
-[node name="cube" parent="Cube" unique_id=1381748780 instance=ExtResource("5_eqg7f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
-
-[node name="Camera3D" type="Camera3D" parent="Cube" unique_id=315650200]
-transform = Transform3D(0.81915224, -0.19617444, 0.5389854, 0, 0.93969274, 0.34201986, -0.57357615, -0.28016633, 0.7697514, 6.328639, 4.5740676, 7.0862207)
-current = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1738635495]
 transform = Transform3D(0.819152, -0.196175, 0.538986, 0, 0.939693, 0.34202, -0.573576, -0.280166, 0.769751, 0, 6, 0)

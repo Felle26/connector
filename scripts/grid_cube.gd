@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var tile_size: float = 2.0
-@export var move_duration: float = 0.15
+@export var move_duration: float = 0.2
 
 var _grid_position := Vector2i.ZERO
 var _is_moving := false
@@ -21,24 +21,21 @@ func _unhandled_input(event: InputEvent) -> void:
 	if _is_moving:
 		return
 
-	if event is InputEventKey and event.pressed and not event.echo:
-		var direction := _direction_from_key(event.keycode)
-		if direction != Vector2i.ZERO:
-			_attempt_move(direction)
+	var direction := _direction_from_input(event)
+	if direction != Vector2i.ZERO:
+		_attempt_move(direction)
 
 
-func _direction_from_key(keycode: Key) -> Vector2i:
-	match keycode:
-		KEY_W, KEY_UP:
-			return Vector2i(0, -1)
-		KEY_S, KEY_DOWN:
-			return Vector2i(0, 1)
-		KEY_A, KEY_LEFT:
-			return Vector2i(-1, 0)
-		KEY_D, KEY_RIGHT:
-			return Vector2i(1, 0)
-		_:
-			return Vector2i.ZERO
+func _direction_from_input(event: InputEvent) -> Vector2i:
+	if event.is_action_pressed("up"):
+		return Vector2i(0, -1)
+	if event.is_action_pressed("down"):
+		return Vector2i(0, 1)
+	if event.is_action_pressed("left"):
+		return Vector2i(-1, 0)
+	if event.is_action_pressed("right"):
+		return Vector2i(1, 0)
+	return Vector2i.ZERO
 
 
 func _attempt_move(direction: Vector2i) -> void:

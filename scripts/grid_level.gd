@@ -4,6 +4,7 @@ const TILE_SCENE := preload("res://lvl/Tile.tscn")
 
 @export var start_tile_scene: PackedScene = TILE_SCENE
 @export var end_tile_scene: PackedScene = TILE_SCENE
+@export var Special_tile: PackedScene = TILE_SCENE
 @export var grid_size_x: int = 10
 @export var grid_size_z: int = 10
 @export var tile_size: float = 1.0

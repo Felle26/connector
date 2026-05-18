@@ -1,8 +1,58 @@
 [gd_scene format=3 uid="uid://b1e6tknnel53o"]
 
-[ext_resource type="PackedScene" uid="uid://way0id1nksas" path="res://lvl/player-mesh/cube.glb" id="1_2720c"]
+[ext_resource type="Script" uid="uid://c3i74icdchbyd" path="res://scripts/grid_cube.gd" id="1_4ipww"]
+[ext_resource type="PackedScene" uid="uid://d2if1tstdw75" path="res://lvl/cube.tscn" id="2_t147y"]
 
-[node name="Node3D" type="Node3D" unique_id=2138845122]
+[sub_resource type="Animation" id="Animation_4ipww"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("idle_anim:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
-[node name="cube" parent="." unique_id=80409464 instance=ExtResource("1_2720c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010558605, 0, 0.004568577)
+[sub_resource type="Animation" id="Animation_t147y"]
+resource_name = "idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("idle_anim:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.15, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rfml4"]
+_data = {
+&"RESET": SubResource("Animation_4ipww"),
+&"idle": SubResource("Animation_t147y")
+}
+
+[node name="Cube" type="Node3D" unique_id=1363088143]
+script = ExtResource("1_4ipww")
+
+[node name="idle_anim" type="Node3D" parent="." unique_id=1540702340]
+
+[node name="cube" parent="idle_anim" unique_id=1381748780 instance=ExtResource("2_t147y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1875153198]
+transform = Transform3D(0.81915224, -0.19617444, 0.5389854, 0, 0.93969274, 0.34201986, -0.57357615, -0.28016633, 0.7697514, 6.328639, 4.5740676, 7.0862207)
+current = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=123665996]
+libraries/ = SubResource("AnimationLibrary_rfml4")
+autoplay = &"idle"

@@ -62,5 +62,5 @@ shadow_mesh = SubResource("ArrayMesh_vxkb5")
 
 [node name="BaseTile" unique_id=1420713860 instance=ExtResource("1_ssj23")]
 
-[node name="Cube" parent="." index="0" unique_id=1839145755]
+[node name="Cube" parent="." index="0" unique_id=1519508199]
 mesh = SubResource("ArrayMesh_ts73t")
