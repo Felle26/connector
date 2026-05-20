@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://tikbjf68veg1" path="res://ui/1-04.png" id="1_y50b7"]
 [ext_resource type="Theme" uid="uid://b8adwxdmxjp7i" path="res://themes/neon_theme.tres" id="2_fvc5t"]
+[ext_resource type="Texture2D" uid="uid://dps7i7w0374gf" path="res://ui/toucharrow.png" id="2_tarrow"]
+[ext_resource type="Script" uid="uid://cwd1xwkkpuf61" path="res://scripts/game_ui.gd" id="3_hf26u"]
 
 [sub_resource type="Animation" id="Animation_gqhv7"]
 resource_name = "idle"
@@ -11,6 +13,244 @@ _data = {
 &"idle": SubResource("Animation_gqhv7")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eevm4"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.019607844, 0.039215688, 0.08627451, 1)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.8980392, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0.8980392, 1, 1)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fhci6"]
+bg_color = Color(0, 0.06666667, 0.101960786, 1)
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0.8980392, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okqr7"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.019607844, 0.039215688, 0.08627451, 1)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.18039216, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(1, 0.18039216, 1, 1)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mt5dp"]
+bg_color = Color(0, 0.06666667, 0.101960786, 1)
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0.8980392, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fpjxy"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.019607844, 0.039215688, 0.08627451, 1)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.18039216, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(1, 0.18039216, 1, 1)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aapbd"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.019607844, 0.039215688, 0.08627451, 1)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.8980392, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0.8980392, 1, 1)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0h4g"]
+bg_color = Color(0, 0.06666667, 0.101960786, 1)
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0.8980392, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xcpbb"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.019607844, 0.039215688, 0.08627451, 1)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.18039216, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(1, 0.18039216, 1, 1)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kilt"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.019607844, 0.039215688, 0.08627451, 1)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.8980392, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0.8980392, 1, 1)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nbg56"]
+bg_color = Color(0, 0.06666667, 0.101960786, 1)
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0.8980392, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1ny1"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.019607844, 0.039215688, 0.08627451, 1)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.18039216, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(1, 0.18039216, 1, 1)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqhv7"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.020700002, 0.04149, 0.09, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.8980392, 1, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+shadow_color = Color(0, 0.8980392, 1, 1)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ncc00"]
+bg_color = Color(0, 0.06666667, 0.101960786, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0.8980392, 1, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fchj2"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.019607844, 0.039215688, 0.08627451, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.18039216, 1, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+shadow_color = Color(1, 0.18039216, 1, 1)
+shadow_size = 8
+
 [node name="GameUi" type="Control" unique_id=998371438]
 layout_mode = 3
 anchors_preset = 15
@@ -18,6 +258,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_hf26u")
+debug_force_touch_ui_visible = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1090982101]
 libraries/ = SubResource("AnimationLibrary_fchj2")
@@ -31,11 +273,11 @@ offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
 
-[node name="104" type="Sprite2D" parent="Control" unique_id=1688460416]
+[node name="img" type="Sprite2D" parent="Control" unique_id=1688460416]
 position = Vector2(-344, 248)
 texture = ExtResource("1_y50b7")
 
-[node name="Label" type="Label" parent="Control/104" unique_id=700915611]
+[node name="Label" type="Label" parent="Control/img" unique_id=700915611]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -54,3 +296,144 @@ horizontal_alignment = 2
 vertical_alignment = 1
 clip_text = true
 uppercase = true
+
+[node name="TouchControls" type="Control" parent="." unique_id=1801000001]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftPad" type="Control" parent="TouchControls" unique_id=1801000002]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -280.0
+offset_right = 264.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="UpButton" type="TextureButton" parent="TouchControls/LeftPad" unique_id=1801000003]
+modulate = Color(1, 1, 1, 0.92)
+layout_mode = 0
+offset_left = 200.0
+offset_top = 8.0
+offset_right = 272.0
+offset_bottom = 80.0
+rotation = -1.5708
+theme = ExtResource("2_fvc5t")
+texture_normal = ExtResource("2_tarrow")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Button" type="Button" parent="TouchControls/LeftPad/UpButton" unique_id=1296451031]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_fvc5t")
+theme_override_styles/normal = SubResource("StyleBoxFlat_eevm4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fhci6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_okqr7")
+
+[node name="LeftButton" type="TextureButton" parent="TouchControls/LeftPad" unique_id=1801000004]
+modulate = Color(1, 1, 1, 0.92)
+layout_mode = 0
+offset_left = 176.0
+offset_top = 104.0
+offset_right = 248.0
+offset_bottom = 176.0
+rotation = 3.14159
+theme = ExtResource("2_fvc5t")
+texture_normal = ExtResource("2_tarrow")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Button2" type="Button" parent="TouchControls/LeftPad/LeftButton" unique_id=868688209]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_fvc5t")
+theme_override_styles/normal = SubResource("StyleBoxFlat_eevm4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mt5dp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fpjxy")
+
+[node name="DownButton" type="TextureButton" parent="TouchControls/LeftPad" unique_id=1801000005]
+modulate = Color(1, 1, 1, 0.92)
+layout_mode = 0
+offset_left = 272.0
+offset_top = 128.0
+offset_right = 344.0
+offset_bottom = 200.0
+rotation = 1.5708
+theme = ExtResource("2_fvc5t")
+texture_normal = ExtResource("2_tarrow")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Button3" type="Button" parent="TouchControls/LeftPad/DownButton" unique_id=1514704138]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.9073486e-05
+offset_right = 1.5258789e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_fvc5t")
+theme_override_styles/normal = SubResource("StyleBoxFlat_aapbd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e0h4g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xcpbb")
+
+[node name="RightButton" type="TextureButton" parent="TouchControls/LeftPad" unique_id=1801000006]
+modulate = Color(1, 1, 1, 0.92)
+layout_mode = 0
+offset_left = 296.0
+offset_top = 32.0
+offset_right = 368.0
+offset_bottom = 104.0
+theme = ExtResource("2_fvc5t")
+texture_normal = ExtResource("2_tarrow")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Button4" type="Button" parent="TouchControls/LeftPad/RightButton" unique_id=1957813815]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_fvc5t")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1kilt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nbg56")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h1ny1")
+
+[node name="ActionButton" type="Button" parent="TouchControls" unique_id=1801000007]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -360.0
+offset_top = -296.0
+offset_right = -200.0
+offset_bottom = -136.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("2_fvc5t")
+theme_override_font_sizes/font_size = 62
+theme_override_styles/normal = SubResource("StyleBoxFlat_gqhv7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ncc00")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fchj2")
+text = "ACT"

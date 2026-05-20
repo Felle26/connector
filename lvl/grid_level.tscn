@@ -48,6 +48,8 @@ fill_chance = 0.266
 
 [node name="Tiles" type="Node3D" parent="." unique_id=1564545814]
 
+[node name="GameUi" parent="." unique_id=998371438 instance=ExtResource("8_revw0")]
+
 [node name="Cube" parent="." unique_id=1363088143 instance=ExtResource("4_knugq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
@@ -69,5 +71,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01644516, -0.01086998, 4.34
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1872763540]
 transform = Transform3D(1, 0, 0, 0, 0.72353363, 0.69028914, 0, -0.69028914, 0.72353363, 0, 8.300974, 0)
-
-[node name="GameUi" parent="." unique_id=998371438 instance=ExtResource("8_revw0")]
