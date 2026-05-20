@@ -2,12 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c135c1hhgcak6" path="res://lvl/BaseTile-mesh/BaseTile.glb" id="1_j0d0i"]
 [ext_resource type="Material" uid="uid://dm1dibda26kd4" path="res://lvl/player-mesh/black_Player.tres" id="2_ok88t"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j0d0i"]
-resource_name = "Highlight-Color"
-cull_mode = 2
-albedo_color = Color(0.087707035, 0.9063355, 0, 1)
-roughness = 0.5
+[ext_resource type="Material" uid="uid://baofsyi0ixtsv" path="res://lvl/player-mesh/Cyan_no_neon.tres" id="3_in0ui"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_vxkb5"]
 _surfaces = [{
@@ -55,7 +50,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 54,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEA"),
-"material": SubResource("StandardMaterial3D_j0d0i"),
+"material": ExtResource("3_in0ui"),
 "name": "Highlight-Color",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -67,5 +62,5 @@ shadow_mesh = SubResource("ArrayMesh_vxkb5")
 
 [node name="BaseTile" unique_id=1420713860 instance=ExtResource("1_j0d0i")]
 
-[node name="Cube" parent="." index="0" unique_id=1839145755]
+[node name="Cube" parent="." index="0" unique_id=1519508199]
 mesh = SubResource("ArrayMesh_ok88t")

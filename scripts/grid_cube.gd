@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var tile_size: float = 2.0
+@export var tile_size: float = 1.0
 @export var move_duration: float = 0.2
 
 var _grid_position := Vector2i.ZERO
@@ -10,15 +10,22 @@ var _is_moving := false
 func _ready() -> void:
 	_grid_position = Vector2i(roundi(position.x / tile_size), roundi(position.z / tile_size))
 	_snap_to_grid()
+	_notify_hover_tile()
 
 
 func set_tile_size(value: float) -> void:
 	tile_size = value
+	_grid_position = Vector2i(roundi(position.x / tile_size), roundi(position.z / tile_size))
 	_snap_to_grid()
+	_notify_hover_tile()
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	if _is_moving:
+		return
+
+	if event.is_action_pressed("action"):
+		_handle_action_on_current_tile()
 		return
 
 	var direction := _direction_from_input(event)
@@ -65,5 +72,37 @@ func _move_to_grid_position() -> void:
 	var tween := create_tween()
 	tween.tween_property(self, "position", target_position, move_duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	tween.finished.connect(func() -> void:
+		_notify_hover_tile()
 		_is_moving = false
 	)
+
+
+func _notify_hover_tile() -> void:
+	var level := get_parent()
+	if level != null and level.has_method("update_tile_hover"):
+		level.call("update_tile_hover", _grid_position)
+
+
+func _handle_action_on_current_tile() -> void:
+	var level := get_parent()
+	if level == null:
+		return
+
+	if level.has_method("is_cell_end") and level.call("is_cell_end", _grid_position):
+		_trigger_end_tile_action()
+		return
+
+	if level.has_method("is_cell_special") and level.call("is_cell_special", _grid_position):
+		dummy_special_tile_action(_grid_position)
+
+
+func _trigger_end_tile_action() -> void:
+	var level := get_parent()
+	if level != null and level.has_method("load_next_level"):
+		level.call("load_next_level")
+		return
+	get_tree().reload_current_scene()
+
+
+func dummy_special_tile_action(cell: Vector2i) -> void:
+	print("Dummy Special-Tile Action ausgelost auf Feld:", cell)

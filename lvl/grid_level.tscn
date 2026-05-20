@@ -38,13 +38,22 @@ end_tile_scene = ExtResource("3_eqg7f")
 Special_tile = ExtResource("4_eqg7f")
 grid_size_x = 5
 grid_size_z = 5
-tile_size = 22.0
-fill_chance = 0.2
+fill_chance = 0.0
 
 [node name="Tiles" type="Node3D" parent="." unique_id=1564545814]
 
 [node name="Cube" parent="." unique_id=1363088143 instance=ExtResource("4_knugq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Cube" unique_id=1959330098]
+transform = Transform3D(0.9685702, -0.12437029, 0.21541569, -1.054235e-08, 0.86602545, 0.5, -0.2487406, -0.4842851, 0.8388064, 3.7051115, 4.5714192, 11.04125)
+spring_length = 5.0
+
+[node name="Camera3D2" type="Camera3D" parent="Cube/SpringArm3D" unique_id=627474736]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, -2.9802322e-08, 0, 0, 0.99999994, 0, 0, 0)
+h_offset = 1.0
+v_offset = 1.0
+current = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1738635495]
 transform = Transform3D(0.819152, -0.196175, 0.538986, 0, 0.939693, 0.34202, -0.573576, -0.280166, 0.769751, 0, 6, 0)
@@ -52,3 +61,6 @@ light_energy = 2.2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1813274961]
 environment = SubResource("Environment_f5j2n")
+
+[node name="Camera3D2" type="Camera3D" parent="." unique_id=19976598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01644516, -0.01086998, 4.345725)
