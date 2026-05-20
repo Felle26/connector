@@ -93,7 +93,14 @@ func _handle_action_on_current_tile() -> void:
 		return
 
 	if level.has_method("is_cell_special") and level.call("is_cell_special", _grid_position):
-		dummy_special_tile_action(_grid_position)
+		if level.has_method("complete_minigame"):
+			var was_completed: bool = level.call("complete_minigame", _grid_position)
+			if was_completed:
+				print("Minispiel gemeistert auf Feld:", _grid_position)
+			else:
+				print("Minispiel auf diesem Feld bereits gewertet:", _grid_position)
+		else:
+			print("Special-Tile Aktion ausgelost auf Feld:", _grid_position)
 
 
 func _trigger_end_tile_action() -> void:
@@ -102,7 +109,3 @@ func _trigger_end_tile_action() -> void:
 		level.call("load_next_level")
 		return
 	get_tree().reload_current_scene()
-
-
-func dummy_special_tile_action(cell: Vector2i) -> void:
-	print("Dummy Special-Tile Action ausgelost auf Feld:", cell)

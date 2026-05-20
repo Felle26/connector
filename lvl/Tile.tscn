@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://n61m47siri5g"]
 
 [ext_resource type="PackedScene" uid="uid://c135c1hhgcak6" path="res://lvl/BaseTile-mesh/BaseTile.glb" id="1_xq2hl"]
-[ext_resource type="Material" uid="uid://b8iedsjpg8256" path="res://lvl/player-mesh/Cyan_Player.tres" id="2_yubbu"]
+[ext_resource type="Material" uid="uid://b4kriowy571ci" path="res://lvl/player-mesh/White_Player.tres" id="2_yubbu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gpejv"]
 resource_name = "Background"
@@ -67,5 +67,5 @@ shadow_mesh = SubResource("ArrayMesh_vxkb5")
 
 [node name="BaseTile" unique_id=1420713860 instance=ExtResource("1_xq2hl")]
 
-[node name="Cube" parent="." index="0" unique_id=1839145755]
+[node name="Cube" parent="." index="0" unique_id=1519508199]
 mesh = SubResource("ArrayMesh_yubbu")

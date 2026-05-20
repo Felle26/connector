@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://d3kog8rndouk7"]
+
+[ext_resource type="Texture2D" uid="uid://tikbjf68veg1" path="res://ui/1-04.png" id="1_y50b7"]
+[ext_resource type="Theme" uid="uid://b8adwxdmxjp7i" path="res://themes/neon_theme.tres" id="2_fvc5t"]
+
+[sub_resource type="Animation" id="Animation_gqhv7"]
+resource_name = "idle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fchj2"]
+_data = {
+&"idle": SubResource("Animation_gqhv7")
+}
+
+[node name="GameUi" type="Control" unique_id=998371438]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1090982101]
+libraries/ = SubResource("AnimationLibrary_fchj2")
+
+[node name="Control" type="Control" parent="." unique_id=1628826262]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="104" type="Sprite2D" parent="Control" unique_id=1688460416]
+position = Vector2(-344, 248)
+texture = ExtResource("1_y50b7")
+
+[node name="Label" type="Label" parent="Control/104" unique_id=700915611]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -232.0
+offset_top = -118.5
+offset_right = -278.0
+offset_bottom = -118.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_fvc5t")
+theme_override_font_sizes/font_size = 149
+text = "300"
+horizontal_alignment = 2
+vertical_alignment = 1
+clip_text = true
+uppercase = true

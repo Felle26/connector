@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://dqo2k1b4208ga"]
 
 [ext_resource type="Script" uid="uid://bm7cplcubhdsj" path="res://scripts/grid_level.gd" id="1_jw2u7"]
+[ext_resource type="PackedScene" uid="uid://dxw7xl5m8ls1x" path="res://lvl/base_tile.tscn" id="2_1fyp7"]
 [ext_resource type="PackedScene" uid="uid://borriafdw3cxf" path="res://lvl/start_Tile.tscn" id="2_knugq"]
 [ext_resource type="PackedScene" uid="uid://byie8t2xw7g8k" path="res://lvl/end_tile.tscn" id="3_eqg7f"]
 [ext_resource type="PackedScene" uid="uid://bgjq26hk4d3ub" path="res://lvl/Safe_Tile.tscn" id="4_eqg7f"]
 [ext_resource type="PackedScene" uid="uid://b1e6tknnel53o" path="res://lvl/PlayerChar.tscn" id="4_knugq"]
+[ext_resource type="PackedScene" uid="uid://dvt2h0dwp3w04" path="res://lvl/Repair_Tile.tscn" id="6_r88t1"]
+[ext_resource type="PackedScene" uid="uid://d3kog8rndouk7" path="res://ui/gameUI.tscn" id="8_revw0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f8gq1"]
 sky_top_color = Color(0.007843138, 0.007843138, 0.07058824, 1)
@@ -33,12 +36,15 @@ fog_light_energy = 0.44
 
 [node name="Game" type="Node3D" unique_id=1287902632]
 script = ExtResource("1_jw2u7")
+base_tile_scene = ExtResource("2_1fyp7")
 start_tile_scene = ExtResource("2_knugq")
 end_tile_scene = ExtResource("3_eqg7f")
-Special_tile = ExtResource("4_eqg7f")
+special_tile_scene_1 = ExtResource("4_eqg7f")
+special_tile_scene_2 = ExtResource("6_r88t1")
 grid_size_x = 5
 grid_size_z = 5
-fill_chance = 0.0
+tile_gap = 0.2
+fill_chance = 0.266
 
 [node name="Tiles" type="Node3D" parent="." unique_id=1564545814]
 
@@ -55,12 +61,13 @@ h_offset = 1.0
 v_offset = 1.0
 current = true
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1738635495]
-transform = Transform3D(0.819152, -0.196175, 0.538986, 0, 0.939693, 0.34202, -0.573576, -0.280166, 0.769751, 0, 6, 0)
-light_energy = 2.2
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1813274961]
 environment = SubResource("Environment_f5j2n")
 
 [node name="Camera3D2" type="Camera3D" parent="." unique_id=19976598]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01644516, -0.01086998, 4.345725)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1872763540]
+transform = Transform3D(1, 0, 0, 0, 0.72353363, 0.69028914, 0, -0.69028914, 0.72353363, 0, 8.300974, 0)
+
+[node name="GameUi" parent="." unique_id=998371438 instance=ExtResource("8_revw0")]
