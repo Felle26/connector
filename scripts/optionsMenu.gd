@@ -47,17 +47,13 @@ func _ready():
 
 
 func _on_volume_changed(value):
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(value))
-	SettingsManagerLoader.master_volume = value
-	SettingsManagerLoader.save_settings()
+	SettingsManagerLoader.set_master_volume(value)
 
 func _on_effect_Volume_changed(value):
-	SettingsManagerLoader.effects_volume = value
-	SettingsManagerLoader.save_settings()
+	SettingsManagerLoader.set_effects_volume(value)
 
 func _on_music_Volume_changed(value):
-	SettingsManagerLoader.music_volume = value
-	SettingsManagerLoader.save_settings()
+	SettingsManagerLoader.set_music_volume(value)
 
 func _on_resolution_selected(index):
 	var res_button = $MarginContainer/VBoxContainer/HBoxContainer2/ResolutionButton
@@ -93,5 +89,4 @@ func _on_language_changed(new_locale):
 
 
 func _on_Button_Clicked():
-	audio_stream_player.volume_db = linear_to_db(SettingsManagerLoader.effects_volume*SettingsManagerLoader.master_volume)
 	audio_stream_player.play()

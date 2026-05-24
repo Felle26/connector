@@ -143,6 +143,7 @@ text = "text = tr(\"MENU_OPTIONS_BACK\")"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1701955196]
 stream = ExtResource("3_283tq")
+bus = &"SFX"
 
 [connection signal="drag_started" from="MarginContainer/VBoxContainer/HBoxContainer/VolumeSlider" to="." method="_on_Button_Clicked"]
 [connection signal="drag_started" from="MarginContainer/VBoxContainer/HBoxContainer4/VolumeSlider" to="." method="_on_Button_Clicked"]

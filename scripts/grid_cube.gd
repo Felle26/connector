@@ -2,6 +2,7 @@ extends Node3D
 
 @export var tile_size: float = 1.0
 @export var move_duration: float = 0.2
+@onready var player_move_sound: AudioStreamPlayer = $AudioStreamPlayer
 
 var _grid_position := Vector2i.ZERO
 var _is_moving := false
@@ -51,6 +52,7 @@ func _attempt_move(direction: Vector2i) -> void:
 		return
 
 	_grid_position = target
+	_play_move_sound()
 	_move_to_grid_position()
 
 
@@ -109,3 +111,10 @@ func _trigger_end_tile_action() -> void:
 		level.call("load_next_level")
 		return
 	get_tree().reload_current_scene()
+
+
+func _play_move_sound() -> void:
+	if player_move_sound == null:
+		return
+
+	player_move_sound.play()

@@ -75,5 +75,4 @@ func _emit_touch_action(action_name: String, pressed: bool) -> void:
 
 
 func Play_on_Click_Sound() -> void:
-	button_click_sound.volume_db = linear_to_db(SettingsManagerLoader.effects_volume)*SettingsManagerLoader.master_volume
 	button_click_sound.play()

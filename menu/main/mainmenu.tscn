@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bksibkah86msf" path="res://scripts/mainmenu.gd" id="1_bqnqr"]
 [ext_resource type="Theme" uid="uid://b8adwxdmxjp7i" path="res://themes/neon_theme.tres" id="1_pcoik"]
+[ext_resource type="AudioStream" uid="uid://djytsyrxwemec" path="res://audio/background_loop.ogg" id="2_x8rxy"]
 [ext_resource type="AudioStream" uid="uid://yk7bfmiqyrgh" path="res://audio/click.wav" id="3_1irgd"]
 
 [node name="Control" type="Control" unique_id=238838966]
@@ -14,6 +15,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_bqnqr")
+background_music = ExtResource("2_x8rxy")
 metadata/_edit_use_anchors_ = true
 
 [node name="menustruct" type="ColorRect" parent="." unique_id=1087207250]
@@ -62,6 +64,7 @@ text = "text = tr(\"MENU_QUIT\")"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1450745075]
 stream = ExtResource("3_1irgd")
+bus = &"SFX"
 
 [connection signal="button_down" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_Button_Click_audio"]
 [connection signal="button_down" from="CenterContainer/VBoxContainer/OptionsButton" to="." method="_on_Button_Click_audio"]
