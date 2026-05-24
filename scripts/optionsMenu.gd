@@ -1,4 +1,5 @@
 extends Control
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready():
 	# tranlation
@@ -89,3 +90,8 @@ func _on_language_changed(new_locale):
 	$MarginContainer/VBoxContainer/BackButton.text = tr("MENU_OPTIONS_BACK")
 	$MarginContainer/VBoxContainer/HBoxContainer3/Deutsch.text = tr("MENU_OPTIONS_LANG_GERMAN")
 	$MarginContainer/VBoxContainer/HBoxContainer3/Englisch.text = tr("MENU_OPTIONS_LANG_ENGLISH")
+
+
+func _on_Button_Clicked():
+	audio_stream_player.volume_db = linear_to_db(SettingsManagerLoader.effects_volume*SettingsManagerLoader.master_volume)
+	audio_stream_player.play()

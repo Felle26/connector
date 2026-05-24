@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://b8adwxdmxjp7i" path="res://themes/neon_theme.tres" id="1_ns22d"]
 [ext_resource type="Script" uid="uid://b4hp6a5o7q5u8" path="res://scripts/optionsMenu.gd" id="1_qocjr"]
+[ext_resource type="AudioStream" uid="uid://yk7bfmiqyrgh" path="res://audio/click.wav" id="3_283tq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nmfr6"]
 
@@ -139,3 +140,13 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 text = "text = tr(\"MENU_OPTIONS_BACK\")"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1701955196]
+stream = ExtResource("3_283tq")
+
+[connection signal="drag_started" from="MarginContainer/VBoxContainer/HBoxContainer/VolumeSlider" to="." method="_on_Button_Clicked"]
+[connection signal="drag_started" from="MarginContainer/VBoxContainer/HBoxContainer4/VolumeSlider" to="." method="_on_Button_Clicked"]
+[connection signal="drag_started" from="MarginContainer/VBoxContainer/HBoxContainer5/VolumeSlider" to="." method="_on_Button_Clicked"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer3/Deutsch" to="." method="_on_Button_Clicked"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer3/Englisch" to="." method="_on_Button_Clicked"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer/BackButton" to="." method="_on_Button_Clicked"]

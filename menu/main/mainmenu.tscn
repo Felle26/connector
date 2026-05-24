@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bksibkah86msf" path="res://scripts/mainmenu.gd" id="1_bqnqr"]
 [ext_resource type="Theme" uid="uid://b8adwxdmxjp7i" path="res://themes/neon_theme.tres" id="1_pcoik"]
+[ext_resource type="AudioStream" uid="uid://yk7bfmiqyrgh" path="res://audio/click.wav" id="3_1irgd"]
 
 [node name="Control" type="Control" unique_id=238838966]
 layout_mode = 3
@@ -58,3 +59,10 @@ text = "text = tr(\"MENU_OPTIONS\")"
 [node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1434963383]
 layout_mode = 2
 text = "text = tr(\"MENU_QUIT\")"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1450745075]
+stream = ExtResource("3_1irgd")
+
+[connection signal="button_down" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_Button_Click_audio"]
+[connection signal="button_down" from="CenterContainer/VBoxContainer/OptionsButton" to="." method="_on_Button_Click_audio"]
+[connection signal="button_down" from="CenterContainer/VBoxContainer/QuitButton" to="." method="_on_Button_Click_audio"]

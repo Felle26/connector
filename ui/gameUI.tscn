@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://b8adwxdmxjp7i" path="res://themes/neon_theme.tres" id="2_fvc5t"]
 [ext_resource type="Texture2D" uid="uid://dps7i7w0374gf" path="res://ui/toucharrow.png" id="2_tarrow"]
 [ext_resource type="Script" uid="uid://cwd1xwkkpuf61" path="res://scripts/game_ui.gd" id="3_hf26u"]
+[ext_resource type="AudioStream" uid="uid://yk7bfmiqyrgh" path="res://audio/click.wav" id="5_fchj2"]
 
 [sub_resource type="Animation" id="Animation_gqhv7"]
 resource_name = "idle"
@@ -437,3 +438,12 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_gqhv7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ncc00")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fchj2")
 text = "ACT"
+
+[node name="Button_Click_Sound" type="AudioStreamPlayer" parent="." unique_id=200860556]
+stream = ExtResource("5_fchj2")
+
+[connection signal="button_down" from="TouchControls/LeftPad/UpButton/Button" to="." method="Play_on_Click_Sound"]
+[connection signal="button_down" from="TouchControls/LeftPad/LeftButton/Button2" to="." method="Play_on_Click_Sound"]
+[connection signal="button_down" from="TouchControls/LeftPad/DownButton/Button3" to="." method="Play_on_Click_Sound"]
+[connection signal="button_down" from="TouchControls/LeftPad/RightButton/Button4" to="." method="Play_on_Click_Sound"]
+[connection signal="button_down" from="TouchControls/ActionButton" to="." method="Play_on_Click_Sound"]

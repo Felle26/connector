@@ -56,3 +56,5 @@ current = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=123665996]
 libraries/ = SubResource("AnimationLibrary_rfml4")
 autoplay = &"idle"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1132526993]

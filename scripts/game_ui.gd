@@ -14,6 +14,7 @@ extends Control
 @onready var leftbutton: Button = $TouchControls/LeftPad/LeftButton/Button2
 @onready var downbutton: Button = $TouchControls/LeftPad/DownButton/Button3
 @onready var rightbutton: Button = $TouchControls/LeftPad/RightButton/Button4
+@onready var button_click_sound: AudioStreamPlayer = $Button_Click_Sound
 
 
 func _ready() -> void:
@@ -71,3 +72,8 @@ func _emit_touch_action(action_name: String, pressed: bool) -> void:
 	event.action = action_name
 	event.pressed = pressed
 	Input.parse_input_event(event)
+
+
+func Play_on_Click_Sound() -> void:
+	button_click_sound.volume_db = linear_to_db(SettingsManagerLoader.effects_volume)*SettingsManagerLoader.master_volume
+	button_click_sound.play()
